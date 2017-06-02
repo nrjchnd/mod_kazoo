@@ -108,10 +108,10 @@ exit
 ```
 - Add WebSite
 ```
-su zotonic 
+su - zotonic 
 zotonic start
 /home/zotonic/zotonic/bin/zotonic addsite -s blog phiz 
-vi /home/zotonic/zotonic/user/sites/phiz/config and set hostname
+vi /home/zotonic/zotonic/user/sites/phiz/config (set hostname)
 ```
 - Force SSL (set mod_ssl vars)
 ```
@@ -141,7 +141,7 @@ openssl rsa -in /etc/letsencrypt/live/`hostname -f`/privkey.pem -out /home/zoton
 
 ## Install mod_kazoo
 ```
-su zotonic
+su - zotonic
 cd ~/zotonic/user/modules/
 git clone https://github.com/onnet/mod_kazoo.git
 zotonic shell
