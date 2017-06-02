@@ -73,7 +73,7 @@ vi /home/zotonic/.zotonic/0/zotonic.config
 
 make 
 
-vi .bash_profile:
+vi ~/.bash_profile
 ======
 PATH=$PATH:$HOME/zotonic/bin
 export PATH
