@@ -111,19 +111,22 @@ su - zotonic
 zotonic start
 /home/zotonic/zotonic/bin/zotonic addsite -s blog phiz 
 vi /home/zotonic/zotonic/user/sites/phiz/config (set hostname and change default password)
-zotonic modules -s phiz activate mod_ssl_letsencrypt
-zotonic update
-```
-
-## Install mod_kazoo
-```
-su - zotonic
+mv /home/zotonic/zotonic/user/sites/phiz/config ~/
+cd ~/zotonic/zotonic/user/sites
+rm -rf phiz
+git clone https://github.com/onnet/phiz.git
+mv ~/config phiz/
 cd ~/zotonic/user/modules/
 git clone https://github.com/onnet/mod_kazoo.git
-zotonic shell
-> z:m().
-> z_module_manager:activate(mod_kazoo, z:c(phiz)).
+git clone https://github.com/onnet/mod_bt.git
+zotonic update
+zotonic restart
+zotonic modules -s phiz activate mod_ssl_letsencrypt
+zotonic modules -s phiz activate mod_kazoo
+zotonic modules -s phiz activate mod_bt
+zotonic restart
 ```
+
 ### Upload initial keys to Zotonic DB (could be also configured through Zotonic admin portal)
 
 To get keys from another Zotonic (if exists):
