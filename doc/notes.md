@@ -2,6 +2,9 @@
 ### Note: In order OKUI functions properly [Onbill Kazoo app](https://github.com/onnet/onbill "onbill") should be installed in your Kazoo environment
 ## Zotonic installation
 
+- Disable selinux.
+- Add needed packages:
+
 ```
 yum -y install epel-release
 yum -y install ImageMagick postgresql-server make vim git gcc gcc-c++ shorewall ntp inotify-tools libtiff-tools patch wxGTK python-setuptools libffi-devel openssl-devel python-devel certbot libxslt-devel zip unzip expat zlib-devel curl ncurses-devel git-core htmldoc gcc gcc-c++ openssl-devel expat-devel perl-Image-ExifTool mlocate
