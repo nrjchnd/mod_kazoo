@@ -112,7 +112,7 @@ zotonic start
 /home/zotonic/zotonic/bin/zotonic addsite -s blog phiz 
 vi /home/zotonic/zotonic/user/sites/phiz/config (set hostname and change default password)
 zotonic modules -s phiz activate mod_ssl_letsencrypt
-zotonic restart
+zotonic update
 ```
 
 ## Install mod_kazoo
