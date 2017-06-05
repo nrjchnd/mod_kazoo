@@ -55,7 +55,6 @@ vi .bashrc
 
 git clone git://github.com/zotonic/zotonic.git 
 cd zotonic 
-git checkout 0.x 
 
 vi /home/zotonic/zotonic/src/support/z_utils.erl
 ===
@@ -117,23 +116,7 @@ mod_ssl    is_ssl    true
 mod_ssl    is_secure    true 
 ```
 ```
-zotonic modules -s phiz activate mod_ssl
-zotonic modules -s phiz activate mod_ssl_self_signed
-```
-- Letsencrypt SSL (should be done as root, 443 port should be opened for check from letsencrypt side)
-
-`certbot certonly --standalone -d your_domain_name.com`
-
-- if fails check if all -devel libs are installed (like puthon2-devel) and `pip install cryptography --force-reinstall` after that
-- if asks to upgrade pyOpenSSL:
-```
-wget ftp://ftp.pbone.net/mirror/ftp.centos.org/7.3.1611/cloud/x86_64/openstack-mitaka/common/pyOpenSSL-0.15.1-1.el7.noarch.rpm
-rpm -Uvh pyOpenSSL-0.15.1-1.el7.noarch.rpm 
-```
-```
-cp /etc/letsencrypt/live/`hostname -f`/fullchain.pem /home/zotonic/zotonic/user/sites/phiz/ssl/phiz.ca.crt
-cp /etc/letsencrypt/live/`hostname -f`/cert.pem /home/zotonic/zotonic/user/sites/phiz/ssl/phiz.crt
-openssl rsa -in /etc/letsencrypt/live/`hostname -f`/privkey.pem -out /home/zotonic/zotonic/user/sites/phiz/ssl/phiz.pem
+zotonic modules -s phiz activate mod_ssl_letsencrypt
 ```
 
 ## Install mod_kazoo
