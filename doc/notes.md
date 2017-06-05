@@ -65,6 +65,7 @@ vi /home/zotonic/zotonic/src/support/z_utils.erl
 make 
 
 vi /home/zotonic/.zotonic/0/zotonic.config
+    ,{ssl_only, true}
     ,{deps,
      [
       {ibrowse, ".*", {git, "git://github.com/cmullaparthi/ibrowse.git", {branch, "master"}}}
@@ -110,15 +111,8 @@ su - zotonic
 zotonic start
 /home/zotonic/zotonic/bin/zotonic addsite -s blog phiz 
 vi /home/zotonic/zotonic/user/sites/phiz/config (set hostname and change default password)
-```
-- Force SSL (set mod_ssl vars)
-```
-mod_ssl    listen_port    443 
-mod_ssl    is_ssl    true 
-mod_ssl    is_secure    true 
-```
-```
 zotonic modules -s phiz activate mod_ssl_letsencrypt
+zotonic restart
 ```
 
 ## Install mod_kazoo
