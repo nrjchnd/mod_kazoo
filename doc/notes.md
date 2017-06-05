@@ -64,7 +64,7 @@ vi /home/zotonic/zotonic/src/support/z_utils.erl
 
 make 
 
-vi /home/zotonic/.zotonic/0/zotonic.config
+vi /home/zotonic/.zotonic/1/zotonic.config
     ,{ssl_only, true}
     ,{deps,
      [
