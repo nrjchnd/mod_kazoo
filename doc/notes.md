@@ -86,6 +86,8 @@ chmod a+x /etc/rc.local
 
 echo "export ZOTONIC_PORT=80" >> /home/zotonic/.bashrc
 echo "export ZOTONIC_SSL_PORT=443" >> /home/zotonic/.bashrc
+echo "export ZOTONIC_LISTEN_PORT=80" >> /home/zotonic/.bashrc
+echo "export ZOTONIC_SSL_LISTEN_PORT=443" >> /home/zotonic/.bashrc
 setcap 'cap_net_bind_service=+ep' /usr/local/erlang/erts-8.3/bin/beam
 setcap 'cap_net_bind_service=+ep' /usr/local/erlang/erts-8.3/bin/beam.smp
 ```
@@ -107,7 +109,7 @@ exit
 su - zotonic 
 zotonic start
 /home/zotonic/zotonic/bin/zotonic addsite -s blog phiz 
-vi /home/zotonic/zotonic/user/sites/phiz/config (set hostname)
+vi /home/zotonic/zotonic/user/sites/phiz/config (set hostname and change default password)
 ```
 - Force SSL (set mod_ssl vars)
 ```
