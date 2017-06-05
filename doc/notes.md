@@ -100,9 +100,6 @@ ALTER USER zotonic CREATEDB;
 
 CREATE DATABASE zotonic WITH OWNER = zotonic ENCODING = 'UTF8'; 
 GRANT ALL ON DATABASE zotonic TO zotonic; 
-\c zotonic 
-CREATE LANGUAGE "plpgsql"; 
-exit
 \q
 exit
 ```
