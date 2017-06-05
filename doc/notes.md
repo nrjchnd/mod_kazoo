@@ -46,7 +46,7 @@ host    all             all             ::1/128                 trust
 ```
 useradd zotonic 
 passwd zotonic 
-su zotonic 
+su - zotonic 
 cd /home/zotonic/ 
 . /usr/local/erlang/activate
 
@@ -93,7 +93,7 @@ setcap 'cap_net_bind_service=+ep' /usr/local/erlang/erts-8.3/bin/beam.smp
 - echo "HOST_IP_ADDR    SiteName" >> /etc/hosts
 - Postgres Zotonic DB tweaks
 ```
-su postgres 
+su - postgres 
 psql 
 CREATE USER zotonic WITH PASSWORD 'zotonic'; 
 ALTER USER zotonic CREATEDB; 
